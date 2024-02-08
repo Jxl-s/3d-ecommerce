@@ -48,7 +48,7 @@ export default function SideBar({ className }: SideBarProps) {
                 "h-screen duration-300 overflow-hidden fixed " + className
             }
         >
-            <div className="h-full w-full bg-white rounded-lg drop-shadow-lg pt-3 flex flex-col">
+            <div className="h-full w-full bg-white rounded-lg pt-3 flex flex-col">
                 <h1 className="font-bold text-2xl text-center">VirtuMarket</h1>
                 <hr className="mt-2 mx-4" />
                 <div className="grow overflow-y-auto no-scrollbar">
