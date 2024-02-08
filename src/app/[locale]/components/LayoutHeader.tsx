@@ -1,6 +1,7 @@
 import LayoutCartButton from "./LayoutCartButton";
 import { useTranslations } from "next-intl";
-
+import Link from "next/link";
+import LayoutBurgerButton from "./LayoutBurgerButton";
 interface Props {
     name: string;
 }
@@ -11,7 +12,9 @@ export default function LayoutHeader({ name }: Props) {
     return (
         <>
             <header className="grid grid-cols-6 items-center md:items-start justify-between">
-                <div className="col-span-1 md:hidden" />
+                <div className="col-span-1 md:hidden">
+                    <LayoutBurgerButton />
+                </div>
                 <div className="col-span-4 md:col-span-5 text-center md:text-start">
                     <h1 className="text-2xl md:text-5xl font-semibold dark:text-white">
                         <span>VirtuMarket</span>
@@ -22,7 +25,9 @@ export default function LayoutHeader({ name }: Props) {
                         {t("subtitle")}
                     </p>
                 </div>
-                <LayoutCartButton content={t("Cart")} />
+                <Link href="./cart">
+                    <LayoutCartButton content={t("Cart")} />
+                </Link>
             </header>
         </>
     );

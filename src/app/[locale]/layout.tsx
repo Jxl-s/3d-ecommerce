@@ -71,7 +71,10 @@ export default function RootLayout({
                 {/* Sidebar here, with the offset div */}
                 <LayoutSideBar
                     dark={appendTheme === "dark"}
-                    className={`w-0 hidden md:block md:w-[22em] p-5 md:p-10`}
+                    strings={{
+                        theme: t("Theme"),
+                        signOut: t("Sign Out"),
+                    }}
                     objects={[
                         {
                             text: t("Main"),
@@ -82,19 +85,19 @@ export default function RootLayout({
                             text: t("Home"),
                             type: "link",
                             active: true,
-                            href: "/",
+                            href: "./home",
                         },
                         {
                             icon: <MagnifyingGlassCircleIcon />,
                             text: t("Browse"),
                             type: "link",
-                            href: "/browse",
+                            href: "./browse",
                         },
                         {
                             icon: <ShoppingCartIcon />,
                             text: t("Cart"),
                             type: "link",
-                            href: "/cart",
+                            href: "./cart",
                         },
                         {
                             text: t("Creator"),
@@ -104,13 +107,13 @@ export default function RootLayout({
                             icon: <PlusCircleIcon />,
                             text: t("New Product"),
                             type: "link",
-                            href: "/new-product",
+                            href: "./creator/new-product",
                         },
                         {
                             icon: <ChartBarIcon />,
                             text: t("Statistics"),
                             type: "link",
-                            href: "/statistics",
+                            href: "./creator/statistics",
                         },
                         {
                             text: t("Help and Support"),
@@ -120,19 +123,19 @@ export default function RootLayout({
                             icon: <BookOpenIcon />,
                             text: t("Contact"),
                             type: "link",
-                            href: "/contact",
+                            href: "./help/contact",
                         },
                         {
                             icon: <PhoneArrowUpRightIcon />,
                             text: t("Customer Service"),
                             type: "link",
-                            href: "/customer-service",
+                            href: "./help/customer-service",
                         },
                         {
                             icon: <QuestionMarkCircleIcon />,
                             text: t("FAQ"),
                             type: "link",
-                            href: "/faq",
+                            href: "./help/faq",
                         },
                         {
                             text: t("Account"),
@@ -142,7 +145,7 @@ export default function RootLayout({
                             icon: <AdjustmentsHorizontalIcon />,
                             text: t("Settings"),
                             type: "link",
-                            href: "/account",
+                            href: "./account/settings",
                         },
                     ]}
                 />
