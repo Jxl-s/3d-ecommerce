@@ -49,7 +49,7 @@ export default function RootLayout({
                     {`
                     const isDark = document.cookie.includes('theme=dark');
                     const noTheme = !document.cookie.includes('theme=');
-                    const isDefaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    const isDefaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
                     if (isDark || noTheme && isDefaultDark) {
                         document.documentElement.classList.add('dark')
