@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import SideBar from "@/components/SideBar";
+import "../globals.css";
+import SideBar from "@/app/[locale]/components/SideBar";
 import Button from "@/components/Button";
 import { HeroSvg } from "@/svgs";
+import LayoutHeader from "./components/LayoutHeader";
+import { useTranslations } from "next-intl";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,32 +19,33 @@ interface PageHeaderProps {
 }
 
 function PageHeader({ name }: PageHeaderProps) {
+    const t = useTranslations("SideBar");
+
     return (
         <header className="grid grid-cols-6 items-center md:items-start justify-between">
-            <div className="col-span-1 md:hidden"></div>
-            <div className="col-span-4 md:col-span-5 text-center md:text-start">
-                <h1 className="text-2xl md:text-5xl font-semibold">
-                    VirtuMarket
-                    <span className="hidden md:inline"> - {name}</span>
-                </h1>
-                <p className="text-black/25 hidden md:block">
-                    Empowering your virtual shopping experience
-                </p>
-            </div>
+            <LayoutHeader name={name} />
+
             <Button theme="primary" className="col-span-1">
                 <HeroSvg name="shopping-cart" />
-                <span className="hidden md:block ml-2">Cart</span>
+
+                <span className="font-semibold text-sm hidden xl:block ml-2">
+                    {t("Cart")}
+                </span>
             </Button>
         </header>
     );
 }
 export default function RootLayout({
     children,
+    params: { locale },
 }: Readonly<{
     children: React.ReactNode;
+    params: { locale: string };
 }>) {
+    const t = useTranslations("SideBar");
+
     return (
-        <html lang="en">
+        <html lang={locale}>
             <body className={inter.className + " flex flex-row"}>
                 {/* Sidebar here, with the offset div */}
                 <SideBar
@@ -52,7 +55,7 @@ export default function RootLayout({
 
                 {/* Remaining content here */}
                 <main className={`flex-grow p-5 md:p-10`}>
-                    <PageHeader name="Home" />
+                    <PageHeader name={t("Home")} />
                     {children}
                 </main>
             </body>

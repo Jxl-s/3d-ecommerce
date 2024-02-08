@@ -1,0 +1,34 @@
+{
+    "SideBar": {
+        "Main": "Main",
+        "Creator": "Creator",
+        "Help and Support": "Help and Support",
+        "Account": "Account",
+
+        "Home": "Home",
+        "Browse": "Browse",
+        "Cart": "Cart",
+
+        "New Product": "New Product",
+        "Statistics": "Statistics",
+
+        "Contact": "Contact",
+        "Customer Service": "Customer Service",
+        "FAQ": "FAQ",
+
+        "Settings": "Settings",
+        "Sign Out": "Sign Out"
+    },
+    "Header": {
+        "subtitle": "Empowering your virtual shopping experience"
+    },
+    "Home": {
+        "subtitle": {
+            "welcome_to": "Welcome to",
+            "before": "This is an eCommerce web application that features basic functionalities of such a system, but without real checkout (e.g. Stripe or Paypal)",
+            "source_github": "Source can be found on my GitHub",
+            "here": "here",
+            "after": "and please check out my other projects as well"
+        }
+    }
+}

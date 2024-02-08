@@ -1,0 +1,34 @@
+{
+    "SideBar": {
+        "Main": "Principal",
+        "Creator": "Créateur",
+        "Help and Support": "Aide et support",
+        "Account": "Mon Compte",
+
+        "Home": "Accueil",
+        "Browse": "Chercher",
+        "Cart": "Chariot",
+
+        "New Product": "Nouveau Produit",
+        "Statistics": "Statistiques",
+
+        "Contact": "Contact",
+        "Customer Service": "Service Client",
+        "FAQ": "FAQ",
+
+        "Settings": "Paramètres",
+        "Sign Out": "Déconnexion"
+    },
+    "Header": {
+        "subtitle": "Améliorez votre expérience de magasinage"
+    },
+    "Home": {
+        "subtitle": {
+            "welcome_to": "Bienvenue à",
+            "before": "Ceci est un site de commerce électronique, qui démontre des fonctions d'une de ces systèmes, mais sans la possibilité d'acheter des produits (ex: Stripe ou Paypal)",
+            "source_github": "Le code source peut être trouvée sur mon GitHub",
+            "here": "ici",
+            "after": "et veuillez consulter mes autres projets également"
+        }
+    }
+}

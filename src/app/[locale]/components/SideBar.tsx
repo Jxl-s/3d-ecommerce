@@ -1,7 +1,6 @@
-"use client";
-
 import { HeroSvg } from "@/svgs";
-import Button from "./Button";
+import Button from "../../../components/Button";
+import { useTranslations } from "next-intl";
 
 function SideBarSection({ children }: React.HTMLAttributes<HTMLDivElement>) {
     return <p className="opacity-75 text-sm px-4 mt-4 mb-2">{children}</p>;
@@ -13,6 +12,7 @@ interface SideBarItemProps extends React.HTMLAttributes<HTMLDivElement> {
     text: string;
 }
 
+// An item part of the list of the sidebar
 function SideBarItem({ active, icon, text, onClick }: SideBarItemProps) {
     const backgroundColor = active
         ? "bg-gray-200 hover:bg-gray-300"
@@ -42,6 +42,8 @@ function SideBarItem({ active, icon, text, onClick }: SideBarItemProps) {
 
 interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {}
 export default function SideBar({ className }: SideBarProps) {
+    const t = useTranslations("SideBar");
+
     return (
         <div
             className={
@@ -52,61 +54,61 @@ export default function SideBar({ className }: SideBarProps) {
                 <h1 className="font-bold text-2xl text-center">VirtuMarket</h1>
                 <hr className="mt-2 mx-4" />
                 <div className="grow overflow-y-auto no-scrollbar">
-                    <SideBarSection>Main</SideBarSection>
+                    <SideBarSection>{t("Main")}</SideBarSection>
 
                     <SideBarItem
                         active={true}
                         icon={<HeroSvg name="home" />}
-                        text="Home"
+                        text={t("Home")}
                     />
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="magnifying-glass-circle" />}
-                        text="Browse"
+                        text={t("Browse")}
                     />
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="shopping-cart" />}
-                        text="Cart"
+                        text={t("Cart")}
                     />
 
-                    <SideBarSection>Creator</SideBarSection>
+                    <SideBarSection>{t("Creator")}</SideBarSection>
 
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="plus-circle" />}
-                        text="New Product"
+                        text={t("New Product")}
                     />
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="chart-bar" />}
-                        text="Statistics"
+                        text={t("Statistics")}
                     />
 
-                    <SideBarSection>Help and Support</SideBarSection>
+                    <SideBarSection>{t("Help and Support")}</SideBarSection>
 
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="book-open" />}
-                        text="Contact"
+                        text={t("Contact")}
                     />
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="phone-arrow-up-right" />}
-                        text="Customer Service"
+                        text={t("Customer Service")}
                     />
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="question-mark-circle" />}
-                        text="FAQ"
+                        text={t("FAQ")}
                     />
 
-                    <SideBarSection>Account</SideBarSection>
+                    <SideBarSection>{t("Account")}</SideBarSection>
 
                     <SideBarItem
                         active={false}
                         icon={<HeroSvg name="adjustments-horizontal" />}
-                        text="Settings"
+                        text={t("Settings")}
                     />
                 </div>
                 <hr className="mt-2 mx-4" />
@@ -116,7 +118,9 @@ export default function SideBar({ className }: SideBarProps) {
                         className="flex items-center justify-center gap-3 w-full"
                     >
                         <HeroSvg name="x-mark" />
-                        <span className="font-semibold text-sm">Sign Out</span>
+                        <span className="font-semibold text-sm">
+                            {t("Sign Out")}
+                        </span>
                     </Button>
                 </div>
             </div>
