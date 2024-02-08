@@ -1,11 +1,22 @@
+import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
-import SideBar from "@/app/[locale]/components/SideBar";
-import Button from "@/components/Button";
-import { HeroSvg } from "@/svgs";
-import LayoutHeader from "./components/LayoutHeader";
 import { useTranslations } from "next-intl";
+
+import LayoutSideBar from "./components/LayoutSideBar";
+import LayoutHeader from "./components/LayoutHeader";
+import { HeroSvg } from "@/svgs";
+import {
+    HomeIcon,
+    MagnifyingGlassCircleIcon,
+    ShoppingCartIcon,
+    PlusCircleIcon,
+    ChartBarIcon,
+    BookOpenIcon,
+    PhoneArrowUpRightIcon,
+    QuestionMarkCircleIcon,
+    AdjustmentsHorizontalIcon,
+} from "@heroicons/react/24/solid";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,27 +25,6 @@ export const metadata: Metadata = {
     description: "An eCommerce website featuring 3D displays of products",
 };
 
-interface PageHeaderProps {
-    name: string;
-}
-
-function PageHeader({ name }: PageHeaderProps) {
-    const t = useTranslations("SideBar");
-
-    return (
-        <header className="grid grid-cols-6 items-center md:items-start justify-between">
-            <LayoutHeader name={name} />
-
-            <Button theme="primary" className="col-span-1">
-                <HeroSvg name="shopping-cart" />
-
-                <span className="font-semibold text-sm hidden xl:block ml-2">
-                    {t("Cart")}
-                </span>
-            </Button>
-        </header>
-    );
-}
 export default function RootLayout({
     children,
     params: { locale },
@@ -46,16 +36,93 @@ export default function RootLayout({
 
     return (
         <html lang={locale}>
-            <body className={inter.className + " flex flex-row"}>
+            <body
+                className={
+                    inter.className + " flex flex-row dark:bg-neutral-800 dark:text-white"
+                }
+            >
                 {/* Sidebar here, with the offset div */}
-                <SideBar
+                <LayoutSideBar
                     className={`w-0 hidden md:block md:w-[22em] p-5 md:p-10`}
+                    objects={[
+                        {
+                            text: t("Main"),
+                            type: "section",
+                        },
+                        {
+                            icon: <HomeIcon />,
+                            text: t("Home"),
+                            type: "link",
+                            active: true,
+                            href: "/",
+                        },
+                        {
+                            icon: <MagnifyingGlassCircleIcon />,
+                            text: t("Browse"),
+                            type: "link",
+                            href: "/browse",
+                        },
+                        {
+                            icon: <ShoppingCartIcon />,
+                            text: t("Cart"),
+                            type: "link",
+                            href: "/cart",
+                        },
+                        {
+                            text: t("Creator"),
+                            type: "section",
+                        },
+                        {
+                            icon: <PlusCircleIcon />,
+                            text: t("New Product"),
+                            type: "link",
+                            href: "/new-product",
+                        },
+                        {
+                            icon: <ChartBarIcon />,
+                            text: t("Statistics"),
+                            type: "link",
+                            href: "/statistics",
+                        },
+                        {
+                            text: t("Help and Support"),
+                            type: "section",
+                        },
+                        {
+                            icon: <BookOpenIcon />,
+                            text: t("Contact"),
+                            type: "link",
+                            href: "/contact",
+                        },
+                        {
+                            icon: <PhoneArrowUpRightIcon />,
+                            text: t("Customer Service"),
+                            type: "link",
+                            href: "/customer-service",
+                        },
+                        {
+                            icon: <QuestionMarkCircleIcon />,
+                            text: t("FAQ"),
+                            type: "link",
+                            href: "/faq",
+                        },
+                        {
+                            text: t("Account"),
+                            type: "section",
+                        },
+                        {
+                            icon: <AdjustmentsHorizontalIcon />,
+                            text: t("Settings"),
+                            type: "link",
+                            href: "/account",
+                        },
+                    ]}
                 />
                 <div className={`me-0 md:me-[22em] duration-300`} />
 
                 {/* Remaining content here */}
                 <main className={`flex-grow p-5 md:p-10`}>
-                    <PageHeader name={t("Home")} />
+                    <LayoutHeader name={t("Home")} />
                     {children}
                 </main>
             </body>
