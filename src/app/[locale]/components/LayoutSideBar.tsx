@@ -51,7 +51,7 @@ export default function LayoutSideBar({
         onResize();
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
-    }, []);
+    }, [setSideBarOpened]);
 
     return (
         <div

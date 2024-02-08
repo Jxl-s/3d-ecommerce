@@ -14,7 +14,7 @@ export default function LayoutBurgerButton() {
             <div onClick={onClick} className="cursor-pointer">
                 <Bars3Icon
                     className={`${
-                        sideBarOpened && "hidden "
+                        sideBarOpened && "hidden"
                     } w-8 h-8 text-black dark:text-white`}
                 />
             </div>
