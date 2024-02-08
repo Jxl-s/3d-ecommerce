@@ -56,9 +56,9 @@ export default function LayoutSideBar({
     return (
         <div
             className={
-                `h-screen duration-300 overflow-hidden fixed z-20 w-${
-                    sideBarOpened ? "[22em] p-10" : "0 p-0"
-                }` + (className ?? "")
+                `h-screen duration-300 overflow-hidden fixed z-20 p-5 ` +
+                (sideBarOpened ? "w-[22em] md:p-10" : "w-0 p-0") +
+                (className ?? "")
             }
         >
             <div className="h-full w-full bg-white rounded-lg pt-3  dark:bg-neutral-900 shadow-lg duration-300">

@@ -65,7 +65,7 @@ export default function RootLayout({
             <body
                 className={
                     inter.className +
-                    " flex flex-row dark:bg-neutral-800 dark:text-white duration-300"
+                    " flex flex-row dark:bg-neutral-800 dark:text-white duration-300 h-screen"
                 }
             >
                 {/* Sidebar here, with the offset div */}
@@ -149,7 +149,7 @@ export default function RootLayout({
                         },
                     ]}
                 />
-                <div className={`me-0 md:me-[22em] duration-300`} />
+                <div className={`me-0 md:me-[20em] duration-300`} />
 
                 {/* Remaining content here */}
                 <main className={`flex-grow p-5 md:p-10`}>
