@@ -1,5 +1,3 @@
-import Button from "@/components/Button";
-import { HeroSvg } from "@/svgs";
 import LayoutCartButton from "./LayoutCartButton";
 import { useTranslations } from "next-intl";
 

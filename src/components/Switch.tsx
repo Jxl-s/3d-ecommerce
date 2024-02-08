@@ -1,28 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
+import { Switch as _Switch_ } from "@headlessui/react";
 
 interface Props {
     enabled?: boolean;
     onChange?: (enabled: boolean) => void;
 }
 
-export default function Toggle({ enabled, onChange }: Props) {
+export default function Switch({ enabled, onChange }: Props) {
     return (
-        <Switch
+        <_Switch_
             checked={enabled ?? false}
             onChange={onChange}
             className={`${
                 enabled ? "bg-blue-600" : "bg-gray-200"
-            } relative inline-flex h-6 w-11 items-center rounded-full`}
+            } relative inline-flex h-6 w-11 items-center rounded-full border border-neutral-500/10`}
         >
-            <span className="sr-only">Enable notifications</span>
             <span
                 className={`${
                     enabled ? "translate-x-6" : "translate-x-1"
-                } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+                } inline-block h-4 w-4 transform rounded-full bg-white transition drop-shadow-lg shadow`}
             />
-        </Switch>
+        </_Switch_>
     );
 }

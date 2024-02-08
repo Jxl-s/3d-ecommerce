@@ -17,7 +17,10 @@
         "FAQ": "FAQ",
 
         "Settings": "Paramètres",
-        "Sign Out": "Déconnexion"
+        "Sign Out": "Déconnexion",
+
+        "Theme": "Thème",
+        "Language": "Langage"
     },
     "Header": {
         "subtitle": "Améliorez votre expérience de magasinage",

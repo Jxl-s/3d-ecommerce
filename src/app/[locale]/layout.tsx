@@ -65,11 +65,12 @@ export default function RootLayout({
             <body
                 className={
                     inter.className +
-                    " flex flex-row dark:bg-neutral-800 dark:text-white"
+                    " flex flex-row dark:bg-neutral-800 dark:text-white duration-300"
                 }
             >
                 {/* Sidebar here, with the offset div */}
                 <LayoutSideBar
+                    dark={appendTheme === "dark"}
                     className={`w-0 hidden md:block md:w-[22em] p-5 md:p-10`}
                     objects={[
                         {

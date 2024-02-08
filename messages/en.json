@@ -17,7 +17,10 @@
         "FAQ": "FAQ",
 
         "Settings": "Settings",
-        "Sign Out": "Sign Out"
+        "Sign Out": "Sign Out",
+
+        "Theme": "Theme",
+        "Language": "Language"
     },
     "Header": {
         "subtitle": "Empowering your virtual shopping experience",

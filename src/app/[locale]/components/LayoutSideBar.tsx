@@ -2,8 +2,7 @@ import { HeroSvg } from "@/svgs";
 import Button from "../../../components/Button";
 import SideBarItem from "./SideBarItem";
 import { useTranslations } from "next-intl";
-import Toggle from "@/components/Toggle";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
+import SideBarThemeSwitch from "./SideBarThemeSwitch";
 
 interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
     objects: {
@@ -13,9 +12,14 @@ interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
         active?: boolean;
         href?: string;
     }[];
+    dark: boolean;
 }
 
-export default function LayoutSideBar({ className, objects }: SideBarProps) {
+export default function LayoutSideBar({
+    className,
+    objects,
+    dark,
+}: SideBarProps) {
     const t = useTranslations("SideBar");
 
     return (
@@ -24,11 +28,11 @@ export default function LayoutSideBar({ className, objects }: SideBarProps) {
                 "h-screen duration-300 overflow-hidden fixed " + className
             }
         >
-            <div className="h-full w-full bg-white rounded-lg pt-3 flex flex-col dark:bg-neutral-900 shadow-lg">
+            <div className="h-full w-full bg-white rounded-lg pt-3 flex flex-col dark:bg-neutral-900 shadow-lg duration-300">
                 <h1 className="font-bold text-2xl text-center dark:text-white">
                     VirtuMarket
                 </h1>
-                <hr className="mt-2 mx-4 dark:border-neutral-600" />
+                <hr className="mt-2 mx-4 dark:border-neutral-600/50" />
                 <div className="grow overflow-y-auto no-scrollbar">
                     {objects.map((o, i) => {
                         if (o.type === "section") {
@@ -55,15 +59,10 @@ export default function LayoutSideBar({ className, objects }: SideBarProps) {
                         }
                     })}
                 </div>
-                <hr className="my-2 mx-4 dark:border-neutral-600" />
 
-                <div className="flex items-center gap-2 px-4">
-                    <SunIcon className="h-6 w-6 text-yellow-400 dark:text-yellow-300" />
-                    <Toggle />
-                    <MoonIcon className="h-6 w-6 text-indigo-500 dark:text-indigo-400" />
-                </div>
+                <SideBarThemeSwitch value={dark} content={t("Theme")} />
 
-                <hr className="mt-2 mx-4 dark:border-neutral-600" />
+                <hr className="mt-2 mx-4 dark:border-neutral-600/50" />
                 <div className="p-3">
                     <Button
                         theme="danger"
