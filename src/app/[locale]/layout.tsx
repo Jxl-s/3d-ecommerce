@@ -17,6 +17,8 @@ import {
     QuestionMarkCircleIcon,
     AdjustmentsHorizontalIcon,
 } from "@heroicons/react/24/solid";
+import Script from "next/script";
+import { cookies } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,11 +36,36 @@ export default function RootLayout({
 }>) {
     const t = useTranslations("SideBar");
 
+    // Try prevent flickering
+    const cookieStore = cookies();
+    const themeCookie = cookieStore.get("theme")?.value;
+
+    const appendTheme = themeCookie === "dark" ? "dark" : "";
+
     return (
-        <html lang={locale}>
+        <html lang={locale} className={`${appendTheme}`}>
+            <head>
+                <Script id="dark-mode-handler" strategy="beforeInteractive">
+                    {`
+                    const isDark = document.cookie.includes('theme=dark');
+                    const noTheme = !document.cookie.includes('theme=');
+                    const isDefaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+                    if (isDark || noTheme && isDefaultDark) {
+                        document.documentElement.classList.add('dark')
+                        document.cookie = "theme=dark;path=/;max-age=31536000"
+                    } else {
+                        document.documentElement.classList.remove('dark')
+                        document.cookie = "theme=light;path=/;max-age=31536000"
+                    }
+                `}
+                </Script>
+            </head>
+
             <body
                 className={
-                    inter.className + " flex flex-row dark:bg-neutral-800 dark:text-white"
+                    inter.className +
+                    " flex flex-row dark:bg-neutral-800 dark:text-white"
                 }
             >
                 {/* Sidebar here, with the offset div */}
