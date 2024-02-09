@@ -6,6 +6,6 @@ interface LayoutState {
 }
 
 export const useLayoutStore = create<LayoutState>((set) => ({
-    sideBarOpened: true,
+    sideBarOpened: false,
     setSideBarOpened: (opened: boolean) => set({ sideBarOpened: opened }),
 }));

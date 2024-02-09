@@ -4,7 +4,7 @@ import { HeroSvg } from "@/svgs";
 import Button from "../../../components/Button";
 import SideBarItem from "./SideBarItem";
 import SideBarThemeSwitch from "./SideBarThemeSwitch";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLayoutStore } from "@/stores/layoutStore";
 
 interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -56,8 +56,10 @@ export default function LayoutSideBar({
     return (
         <div
             className={
-                `h-screen duration-300 overflow-hidden fixed z-20 p-5 ` +
-                (sideBarOpened ? "w-[22em] md:p-10" : "w-0 p-0") +
+                `h-screen duration-300 overflow-hidden fixed z-20 ` +
+                (sideBarOpened
+                    ? `w-[22em] md:p-10 p-5`
+                    : "w-0 p-0") +
                 (className ?? "")
             }
         >

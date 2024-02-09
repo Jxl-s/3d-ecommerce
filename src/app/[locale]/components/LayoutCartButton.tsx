@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/Button";
-import { HeroSvg } from "@/svgs";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 
