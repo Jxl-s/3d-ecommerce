@@ -152,7 +152,7 @@ export default function RootLayout({
                 <div className={`me-0 md:me-[20em] duration-300`} />
 
                 {/* Remaining content here */}
-                <main className={`flex-grow p-5 md:p-10`}>
+                <main className={`flex-grow p-5 md:p-10 h-max`}>
                     <LayoutHeader name={t("Home")} />
                     {children}
                 </main>

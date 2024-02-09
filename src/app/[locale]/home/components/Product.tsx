@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import { numberWithCommas } from "@/util/number";
-import { StarIcon } from "@heroicons/react/24/solid";
+import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,19 +31,20 @@ export default function Product({
             <div className="me-2 flex items-start justify-center">
                 <Image
                     src={picture}
-                    className="object-contain rounded-lg"
+                    className="rounded-lg"
                     alt="Product Picture"
                     width={100}
                     height={100}
+                    objectFit="contain"
                 />
             </div>
 
             <div className="flex flex-col flex-grow">
                 <div className="flex items-start justify-between gap-2">
                     <div>
-                        <span className="font-bold block">{name}</span>
+                        <span className="font-bold block xl:text-lg">{name}</span>
 
-                        <span className="text-[10px] mt-[-2.5px] block">
+                        <span className="text-[10px] mt-[-2.5px] block xl:text-xs">
                             {t("Common.by")}{" "}
                             <Link href="#">
                                 <span className="text-indigo-600 dark:text-indigo-400 font-semibold underline">
@@ -56,6 +57,7 @@ export default function Product({
                     <div>
                         <Button theme="primary" className="px-3 h-8">
                             +
+                            <ShoppingCartIcon className="h-5 w-5 ms-1 inline-block" />
                         </Button>
                     </div>
                 </div>
@@ -74,7 +76,7 @@ export default function Product({
                         {numberWithCommas(ratingCount)}
                     </span>
                 </div>
-                <span className="text-[10px] opacity-50 font-semibold overflow-hidden inline-block text-wrap">
+                <span className="text-[10px] opacity-50 font-medium overflow-hidden inline-block text-wrap xl:text-sm">
                     {description.length < 33
                         ? description
                         : description.slice(0, 30) + "..."}

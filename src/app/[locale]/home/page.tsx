@@ -26,51 +26,58 @@ export default function Home() {
                 </Link>
                 , {t("subtitle.after")}.
             </p>
-            <h1 className="text-xl font-semibold mt-6 flex items-center justify-start">
-                <StarIcon className="h-6 w-6 inline-block me-2" />
-                <span>{t("Featured")}</span>
-            </h1>
-            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900">
-                {/* TODO: Make this show real products instead of 3 random ones */}
-                {Array.from({ length: 3 }).map((_, i) => (
-                    <Fragment key={i}>
-                        <Product
-                            name="Chair for two people"
-                            picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
-                            creator="BobbyMan123"
-                            stars={4}
-                            description="A chair to sit on, for people"
-                            price={18.99}
-                            ratingCount={1423}
-                        />
-                        {i < 2 && (
-                            <hr className="mx-2 dark:border-neutral-600/50" />
-                        )}
-                    </Fragment>
-                ))}
-            </div>
-            <h1 className="text-xl font-semibold mt-6 flex items-center justify-start">
-                <CurrencyDollarIcon className="h-6 w-6 inline-block me-2" />
-                <span>{t("Best Sellers")}</span>
-            </h1>
-            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900">
-                {/* TODO: Make this show real products instead of 3 random ones */}
-                {Array.from({ length: 3 }).map((_, i) => (
-                    <Fragment key={i}>
-                        <Product
-                            name="Chair for two people"
-                            picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
-                            creator="BobbyMan123"
-                            stars={4}
-                            description="A chair to sit on, for people"
-                            price={18.99}
-                            ratingCount={1423}
-                        />
-                        {i < 2 && (
-                            <hr className="mx-2 dark:border-neutral-600/50" />
-                        )}
-                    </Fragment>
-                ))}
+
+            <div className="grid grid-cols-2 gap-6 mt-6">
+                <section className="col-span-2 xl:col-span-1">
+                    <h1 className="text-xl font-semibold flex items-center justify-start">
+                        <StarIcon className="h-6 w-6 inline-block me-2" />
+                        <span>{t("Featured")}</span>
+                    </h1>
+                    <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900/70">
+                        {/* TODO: Make this show real products instead of 3 random ones */}
+                        {Array.from({ length: 3 }).map((_, i) => (
+                            <Fragment key={i}>
+                                <Product
+                                    name="Chair for two people"
+                                    picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
+                                    creator="BobbyMan123"
+                                    stars={4}
+                                    description="A chair to sit on, for people"
+                                    price={18.99}
+                                    ratingCount={1423}
+                                />
+                                {i < 2 && (
+                                    <hr className="mx-2 dark:border-neutral-600/50" />
+                                )}
+                            </Fragment>
+                        ))}
+                    </div>
+                </section>
+                <section className="col-span-2 xl:col-span-1">
+                    <h1 className="text-xl font-semibold flex items-center justify-start">
+                        <CurrencyDollarIcon className="h-6 w-6 inline-block me-2" />
+                        <span>{t("Best Sellers")}</span>
+                    </h1>
+                    <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900/70">
+                        {/* TODO: Make this show real products instead of 3 random ones */}
+                        {Array.from({ length: 3 }).map((_, i) => (
+                            <Fragment key={i}>
+                                <Product
+                                    name="Chair for two people"
+                                    picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
+                                    creator="BobbyMan123"
+                                    stars={4}
+                                    description="A chair to sit on, for people"
+                                    price={18.99}
+                                    ratingCount={1423}
+                                />
+                                {i < 2 && (
+                                    <hr className="mx-2 dark:border-neutral-600/50" />
+                                )}
+                            </Fragment>
+                        ))}
+                    </div>
+                </section>
             </div>
         </>
     );
