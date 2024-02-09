@@ -7,17 +7,21 @@ import Link from "next/link";
 
 interface Props {
     name: string;
-    picture: string;
+    price: number;
+    description: string;
+
+    image: string;
+
     creator: string;
+
     stars: number;
     ratingCount: number;
-    description: string;
-    price: number;
+
 }
 
 export default function Product({
     name,
-    picture,
+    image,
     creator,
     stars,
     ratingCount,
@@ -30,12 +34,11 @@ export default function Product({
         <div className="p-2 pb-0 flex">
             <div className="me-2 flex items-start justify-center">
                 <Image
-                    src={picture}
-                    className="rounded-lg"
+                    src={image}
+                    className="object-contain rounded-lg"
                     alt="Product Picture"
                     width={100}
                     height={100}
-                    objectFit="contain"
                 />
             </div>
 

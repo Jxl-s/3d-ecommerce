@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import Product from "./components/Product";
+import Product from "../../../components/Product";
 import { CurrencyDollarIcon, StarIcon } from "@heroicons/react/24/solid";
 import { Fragment } from "react";
 
@@ -39,7 +39,7 @@ export default function Home() {
                             <Fragment key={i}>
                                 <Product
                                     name="Chair for two people"
-                                    picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
+                                    image="/images/chair.png"
                                     creator="BobbyMan123"
                                     stars={4}
                                     description="A chair to sit on, for people"
@@ -64,7 +64,7 @@ export default function Home() {
                             <Fragment key={i}>
                                 <Product
                                     name="Chair for two people"
-                                    picture="https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/chair-wood/thumbnail.png"
+                                    image="/images/chair.png"
                                     creator="BobbyMan123"
                                     stars={4}
                                     description="A chair to sit on, for people"
