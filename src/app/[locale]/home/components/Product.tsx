@@ -1,8 +1,7 @@
-"use client";
-
 import Button from "@/components/Button";
 import { numberWithCommas } from "@/util/number";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,6 +24,8 @@ export default function Product({
     description,
     price,
 }: Props) {
+    const t = useTranslations();
+
     return (
         <div className="p-2 pb-0 flex">
             <div className="me-2 flex items-start justify-center">
@@ -43,7 +44,7 @@ export default function Product({
                         <span className="font-bold block">{name}</span>
 
                         <span className="text-[10px] mt-[-2.5px] block">
-                            by{" "}
+                            {t("Common.by")}{" "}
                             <Link href="#">
                                 <span className="text-indigo-600 dark:text-indigo-400 font-semibold underline">
                                     {creator}

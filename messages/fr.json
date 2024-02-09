@@ -33,6 +33,11 @@
             "source_github": "Le code source peut être trouvée sur mon GitHub",
             "here": "ici",
             "after": "et veuillez consulter mes autres projets également"
-        }
+        },
+        "Featured": "EN VEDETTE",
+        "Best Sellers": "MEILLEURES VENTES"
+    },
+    "Common": {
+        "by": "de "
     }
 }
