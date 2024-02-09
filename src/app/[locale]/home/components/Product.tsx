@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import { numberWithCommas } from "@/util/number";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
     name: string;
@@ -40,8 +41,14 @@ export default function Product({
                 <div className="flex items-start justify-between gap-2">
                     <div>
                         <span className="font-bold block">{name}</span>
-                        <span className="text-[10px] opacity-50 font-semibold mt-[-2.5px] block">
-                            by {creator}
+
+                        <span className="text-[10px] mt-[-2.5px] block">
+                            by{" "}
+                            <Link href="#">
+                                <span className="text-indigo-600 dark:text-indigo-400 font-semibold underline">
+                                    {creator}
+                                </span>
+                            </Link>
                         </span>
                     </div>
 
@@ -57,12 +64,12 @@ export default function Product({
                             key={i}
                             className={`h-3 w-3 me-[2px] inline-block ${
                                 i < stars
-                                    ? "text-indigo-600"
+                                    ? "text-indigo-600 dark:text-indigo-400"
                                     : "text-neutral-400"
                             }`}
                         />
                     ))}
-                    <span className="font-semibold text-indigo-600 ms-2 text-xs">
+                    <span className="font-semibold text-indigo-600 ms-2 text-xs dark:text-indigo-400">
                         {numberWithCommas(ratingCount)}
                     </span>
                 </div>
@@ -72,7 +79,7 @@ export default function Product({
                         : description.slice(0, 30) + "..."}
                 </span>
                 <div className="flex items-end justify-end flex-grow my-1">
-                    <span className="font-bold text-lg">${price}</span>
+                    <span className="font-bold text-lg ">${price}</span>
                 </div>
             </div>
         </div>

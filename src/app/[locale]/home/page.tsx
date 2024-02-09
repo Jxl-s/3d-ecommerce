@@ -30,7 +30,7 @@ export default function Home() {
                 <StarIcon className="h-6 w-6 inline-block me-2" />
                 <span>FEATURED PRODUCTS</span>
             </h1>
-            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2">
+            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900">
                 {/* TODO: Make this show real products instead of 3 random ones */}
                 {Array.from({ length: 3 }).map((_, i) => (
                     <Fragment key={i}>
@@ -43,7 +43,9 @@ export default function Home() {
                             price={18.99}
                             ratingCount={1423}
                         />
-                        {i < 2 && <hr className="mx-2" key={i + "_"}></hr>}
+                        {i < 2 && (
+                            <hr className="mx-2 dark:border-neutral-600/50" />
+                        )}
                     </Fragment>
                 ))}
             </div>
@@ -51,7 +53,7 @@ export default function Home() {
                 <CurrencyDollarIcon className="h-6 w-6 inline-block me-2" />
                 <span>BEST SELLERS</span>
             </h1>
-            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2">
+            <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900">
                 {/* TODO: Make this show real products instead of 3 random ones */}
                 {Array.from({ length: 3 }).map((_, i) => (
                     <Fragment key={i}>
@@ -64,7 +66,9 @@ export default function Home() {
                             price={18.99}
                             ratingCount={1423}
                         />
-                        {i < 2 && <hr className="mx-2" key={i + "_"}></hr>}
+                        {i < 2 && (
+                            <hr className="mx-2 dark:border-neutral-600/50" />
+                        )}
                     </Fragment>
                 ))}
             </div>
