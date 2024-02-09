@@ -2,7 +2,7 @@
 
 import Switch from "@/components/Switch";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
     value: boolean;
@@ -11,6 +11,23 @@ interface Props {
 
 export default function SideBarThemeSwitch({ value, content }: Props) {
     const [dark, setDark] = useState(value);
+
+    // To set it for the first visit
+    useEffect(() => {
+        // Poll the cookie
+        const interval = setInterval(() => {
+            if (document.cookie.includes("theme=light")) return;
+
+            console.log("bruh");
+            if (document.cookie.includes("theme=dark")) {
+                setDark(true);
+                clearInterval(interval);
+                return;
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const updateTheme = (v: boolean) => {
         if (v) {
