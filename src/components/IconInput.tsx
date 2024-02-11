@@ -4,6 +4,7 @@ interface Props {
     icon: React.ReactNode;
     type: "text" | "number";
     placeholder: string;
+    value?: string;
     label?: string;
     className?: string;
     disabled?: boolean;
@@ -12,6 +13,7 @@ interface Props {
 export default function IconInput({
     icon,
     type,
+    value,
     placeholder,
     label,
     className,
@@ -26,6 +28,7 @@ export default function IconInput({
                     type={type}
                     disabled={disabled}
                     placeholder={placeholder}
+                    value={value}
                     className="text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit"
                 />
             </div>

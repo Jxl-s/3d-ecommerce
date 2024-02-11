@@ -2,6 +2,7 @@
 
 import ListBox from "@/components/ListBox";
 import Switch from "@/components/Switch";
+import { useRouter, usePathname } from "@/navigation";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,8 @@ interface Props {
 
 export default function SideBarOptions({ values, strings }: Props) {
     const [dark, setDark] = useState(values.dark);
+    const router = useRouter();
+    const pathname = usePathname();
 
     // To set it for the first visit
     useEffect(() => {
@@ -57,6 +60,11 @@ export default function SideBarOptions({ values, strings }: Props) {
         languageList.find((l) => l.value === values.language) ??
         languageList[0];
 
+    const changeLanguage = (lang: string) => {
+        // Replace the first part of the URL, with the new language
+        router.push(pathname, { locale: lang });
+    };
+
     return (
         <>
             <div className="grid grid-cols-5 items-center justify-between gap-2 mx-4">
@@ -65,6 +73,7 @@ export default function SideBarOptions({ values, strings }: Props) {
                 </span>
                 <div className="w-full col-span-3">
                     <ListBox
+                        onChange={({ value }) => changeLanguage(value)}
                         list={languageList}
                         showAbove
                         selected={selectedLanguage}

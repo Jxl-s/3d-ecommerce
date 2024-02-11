@@ -17,7 +17,7 @@ export default function Browse() {
                     <MagnifyingGlassCircleIcon className="h-6 w-6 me-3 opacity-50" />
                 }
                 label="Browse"
-                type="number"
+                type="text"
                 placeholder="Expensive watch for a wedding"
             />
             <SortFilters />

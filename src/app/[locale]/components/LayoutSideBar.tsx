@@ -15,9 +15,13 @@ interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
         active?: boolean;
         href?: string;
     }[];
-    dark: boolean;
+    values: {
+        dark: boolean;
+        language: string;
+    };
     strings: {
         theme: string;
+        language: string;
         signOut: string;
     };
 }
@@ -25,7 +29,7 @@ interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function LayoutSideBar({
     className,
     objects,
-    dark,
+    values,
     strings,
 }: SideBarProps) {
     const sideBarOpened = useLayoutStore((s) => s.sideBarOpened);
@@ -99,10 +103,10 @@ export default function LayoutSideBar({
                     </div>
 
                     <SideBarOptions
-                        values={{ dark, language: "en" }}
+                        values={{ dark: values.dark, language: values.language }}
                         strings={{
                             theme: strings.theme,
-                            language: "Language",
+                            language: strings.language,
                         }}
                     />
 

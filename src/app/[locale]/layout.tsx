@@ -69,10 +69,14 @@ export default function RootLayout({
             >
                 {/* Sidebar here, with the offset div */}
                 <LayoutSideBar
-                    dark={appendTheme === "dark"}
+                    values={{
+                        dark: appendTheme === "dark",
+                        language: locale
+                    }}
                     strings={{
                         theme: t("Theme"),
                         signOut: t("Sign Out"),
+                        language: t("Language"),
                     }}
                     objects={[
                         {
