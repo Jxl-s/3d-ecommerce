@@ -10,9 +10,7 @@ interface Props {
     disabled?: boolean;
     onChange?: (text: any) => void;
 
-    // for numbers
-    min?: number;
-    max?: number;
+    inputAttr?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 // todo: clean up so many props
@@ -25,8 +23,8 @@ export default function InputWithIcon({
     className,
     disabled,
     onChange,
-    min,
-    max
+
+    inputAttr
 }: Props) {
     return (
         <div className={className}>
@@ -40,14 +38,13 @@ export default function InputWithIcon({
                     {icon}
                 </div>
                 <input
+                    {...inputAttr}
                     type={type}
                     disabled={disabled}
                     placeholder={placeholder}
                     value={value}
                     onChange={(e) => onChange?.(e.target.value)}
                     className="text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit"
-                    min={min}
-                    max={max}
                 />
             </div>
         </div>

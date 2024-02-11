@@ -42,7 +42,9 @@ export default function PriceFilters({ strings, className }: Props) {
                     onChange={(value) => {
                         setPriceFilters(parseFloat(value), priceFilters.to);
                     }}
-                    min={0}
+                    inputAttr={{
+                        min: 0,
+                    }}
                 />
                 <span className="opacity-50">{strings.to}</span>
                 <InputWithIcon
@@ -57,7 +59,9 @@ export default function PriceFilters({ strings, className }: Props) {
                     onChange={(value) => {
                         setPriceFilters(priceFilters.from, parseFloat(value));
                     }}
-                    min={0}
+                    inputAttr={{
+                        min: 0,
+                    }}
                 />
             </div>
         </div>
