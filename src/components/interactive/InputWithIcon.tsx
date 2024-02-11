@@ -9,8 +9,13 @@ interface Props {
     className?: string;
     disabled?: boolean;
     onChange?: (text: any) => void;
+
+    // for numbers
+    min?: number;
+    max?: number;
 }
 
+// todo: clean up so many props
 export default function InputWithIcon({
     icon,
     type,
@@ -20,6 +25,8 @@ export default function InputWithIcon({
     className,
     disabled,
     onChange,
+    min,
+    max
 }: Props) {
     return (
         <div className={className}>
@@ -39,6 +46,8 @@ export default function InputWithIcon({
                     value={value}
                     onChange={(e) => onChange?.(e.target.value)}
                     className="text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit"
+                    min={min}
+                    max={max}
                 />
             </div>
         </div>

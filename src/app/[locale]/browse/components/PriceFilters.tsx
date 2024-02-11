@@ -38,10 +38,11 @@ export default function PriceFilters({ strings, className }: Props) {
                     icon={
                         <CurrencyDollarIcon className="h-6 w-6 me-3 opacity-50" />
                     }
-                    value={priceFilters.from}
+                    value={priceFilters.from.toFixed(2)}
                     onChange={(value) => {
                         setPriceFilters(parseFloat(value), priceFilters.to);
                     }}
+                    min={0}
                 />
                 <span className="opacity-50">{strings.to}</span>
                 <InputWithIcon
@@ -52,10 +53,11 @@ export default function PriceFilters({ strings, className }: Props) {
                     icon={
                         <CurrencyDollarIcon className="h-6 w-6 me-3 opacity-50" />
                     }
-                    value={priceFilters.to}
+                    value={priceFilters.to.toFixed(2)}
                     onChange={(value) => {
                         setPriceFilters(priceFilters.from, parseFloat(value));
                     }}
+                    min={0}
                 />
             </div>
         </div>
