@@ -12,6 +12,9 @@ import StarFilters from "./components/StarFilters";
 import { useTranslations } from "next-intl";
 import { SortBy, SortOrder } from "@/stores/browseStore";
 import SearchInput from "./components/SearchInput";
+import MultiNumberSelect from "@/components/interactive/MultiNumberSelect";
+import PageSelector from "./components/PageSelector";
+import Product from "@/components/Product";
 
 export default function Browse() {
     const t = useTranslations("Browse");
@@ -54,6 +57,56 @@ export default function Browse() {
                     className="col-span-3 xl:col-span-1"
                     strings={{ price_filters: t("Price Filters"), to: t("To") }}
                 />
+            </div>
+            <hr className="mt-4 border-black/10 dark:border-neutral-600" />
+            <div className="mt-4">
+                <h1 className="w-full text-xl font-semibold">
+                    Results (Showing 10 of 50)
+                </h1>
+                <PageSelector />
+                {/* Show results now */}
+                <div className="mt-2 grid grid-cols-4 gap-2">
+                    <Product
+                        creator="John Doe"
+                        description="Cool chair, I think that you can sit on it instead of standing"
+                        image="/images/chair.png"
+                        name="Chair for two"
+                        price={100}
+                        ratingCount={100}
+                        stars={3}
+                        className="col-span-4 xl:col-span-1"
+                    />
+                    <Product
+                        creator="John Doe"
+                        description="Cool chair, I think that you can"
+                        image="/images/chair.png"
+                        name="Chair for two"
+                        price={100}
+                        ratingCount={100}
+                        stars={3}
+                        className="col-span-4 xl:col-span-1"
+                    />
+                    <Product
+                        creator="John Doe"
+                        description="Cool chair, I think that you can"
+                        image="/images/chair.png"
+                        name="Chair for two"
+                        price={100}
+                        ratingCount={100}
+                        stars={3}
+                        className="col-span-4 xl:col-span-1"
+                    />
+                    <Product
+                        creator="John Doe"
+                        description="Cool chair, I think that you can"
+                        image="/images/chair.png"
+                        name="Chair for two"
+                        price={100}
+                        ratingCount={100}
+                        stars={3}
+                        className="col-span-4 xl:col-span-1"
+                    />
+                </div>
             </div>
         </div>
     );

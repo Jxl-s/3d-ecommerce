@@ -38,6 +38,7 @@ export default function Home() {
                         {Array.from({ length: 3 }).map((_, i) => (
                             <Fragment key={i}>
                                 <Product
+                                    homeProduct={true}
                                     name="Chair for two people"
                                     image="/images/chair.png"
                                     creator="BobbyMan123"
@@ -63,6 +64,7 @@ export default function Home() {
                         {Array.from({ length: 3 }).map((_, i) => (
                             <Fragment key={i}>
                                 <Product
+                                    homeProduct={true}
                                     name="Chair for two people"
                                     image="/images/chair.png"
                                     creator="BobbyMan123"

@@ -4,6 +4,7 @@ import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import ProductRating from "./ProductRating";
 
 interface Props {
     name: string;
@@ -17,6 +18,8 @@ interface Props {
     stars: number;
     ratingCount: number;
 
+    homeProduct?: boolean;
+    className?: string;
 }
 
 export default function Product({
@@ -27,25 +30,32 @@ export default function Product({
     ratingCount,
     description,
     price,
+    homeProduct,
+    className,
 }: Props) {
     const t = useTranslations();
 
     return (
-        <div className="p-2 pb-0 flex">
-            <div className="me-2 flex items-start justify-center">
+        <div
+            className={`p-2 pb-0 flex ${
+                homeProduct ? "" : "bg-white dark:bg-neutral-900 shadow-lg rounded-lg xl:flex-col gap-2"
+            } ${className}`}
+        >
+            <div className="me-2 flex items-start justify-center border border-black/10 xl:rounded-lg">
                 <Image
                     src={image}
-                    className="object-contain rounded-lg"
+                    className="object-contain rounded-lg w-full"
                     alt="Product Picture"
                     width={100}
                     height={100}
                 />
             </div>
-
             <div className="flex flex-col flex-grow">
                 <div className="flex items-start justify-between gap-2">
-                    <div>
-                        <span className="font-bold block xl:text-lg">{name}</span>
+                    <div className="w-full">
+                        <span className="font-bold inline-block xl:text-lg">
+                            {name}
+                        </span>
 
                         <span className="text-[10px] mt-[-2.5px] block xl:text-xs">
                             {t("Common.by")}{" "}
@@ -64,28 +74,16 @@ export default function Product({
                         </Button>
                     </div>
                 </div>
-                <div className="mt-1 flex items-center">
-                    {Array.from({ length: 5 }, (_, i) => (
-                        <StarIcon
-                            key={i}
-                            className={`h-3 w-3 me-[2px] inline-block ${
-                                i < stars
-                                    ? "text-indigo-600 dark:text-indigo-400"
-                                    : "text-neutral-400"
-                            }`}
-                        />
-                    ))}
-                    <span className="font-semibold text-indigo-600 ms-2 text-xs dark:text-indigo-400">
-                        {numberWithCommas(ratingCount)}
-                    </span>
-                </div>
-                <span className="text-[10px] opacity-50 font-medium overflow-hidden inline-block text-wrap xl:text-sm">
-                    {description.length < 33
-                        ? description
-                        : description.slice(0, 30) + "..."}
+                <ProductRating
+                    stars={stars}
+                    ratingCount={ratingCount}
+                    className="mt-1"
+                />
+                <span className="text-[10px] opacity-50 font-medium dark:font-normal xl:text-sm">
+                    {description}
                 </span>
                 <div className="flex items-end justify-end flex-grow my-1">
-                    <span className="font-bold text-lg ">${price}</span>
+                    <span className="font-bold dark:font-semibold text-lg">${price}</span>
                 </div>
             </div>
         </div>

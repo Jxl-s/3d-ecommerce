@@ -4,6 +4,7 @@ interface Props {
     values: number[];
     label?: string;
     onChange?: (values: number[]) => void;
+    onClick?: (value: number) => void;
     disabled?: boolean;
 }
 
@@ -13,6 +14,7 @@ export default function MultiNumberSelect({
     label,
     values,
     onChange,
+    onClick,
     disabled,
 }: Props) {
     return (
@@ -38,6 +40,9 @@ export default function MultiNumberSelect({
                         }`}
                         onClick={() => {
                             if (disabled) return;
+
+                            // if there's onClick, it means it's a controlled component
+                            if (onClick) return onClick(i);
 
                             // Create new array of values
                             let newValues = [...values];
