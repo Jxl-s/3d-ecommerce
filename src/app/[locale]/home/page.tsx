@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/interactive/Button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,7 +33,7 @@ export default function Home() {
                         <StarIcon className="h-6 w-6 inline-block me-2" />
                         <span>{t("Featured")}</span>
                     </h1>
-                    <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900/70">
+                    <div className="bg-white rounded-lg p-2 drop-shadow-md mt-2 dark:bg-neutral-900/70">
                         {/* TODO: Make this show real products instead of 3 random ones */}
                         {Array.from({ length: 3 }).map((_, i) => (
                             <Fragment key={i}>
@@ -58,7 +58,7 @@ export default function Home() {
                         <CurrencyDollarIcon className="h-6 w-6 inline-block me-2" />
                         <span>{t("Best Sellers")}</span>
                     </h1>
-                    <div className="bg-white rounded-lg p-2 drop-shadow-lg mt-2 dark:bg-neutral-900/70">
+                    <div className="bg-white rounded-lg p-2 drop-shadow-md mt-2 dark:bg-neutral-900/70">
                         {/* TODO: Make this show real products instead of 3 random ones */}
                         {Array.from({ length: 3 }).map((_, i) => (
                             <Fragment key={i}>

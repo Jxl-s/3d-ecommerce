@@ -1,7 +1,7 @@
 "use client";
 
-import ListBox from "@/components/ListBox";
-import Switch from "@/components/Switch";
+import ListBox from "@/components/interactive/ListBox";
+import Switch from "@/components/interactive/Switch";
 import { useRouter, usePathname } from "@/navigation";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";

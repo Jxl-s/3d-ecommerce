@@ -1,7 +1,7 @@
 "use client";
 
 import { HeroSvg } from "@/svgs";
-import Button from "../../../components/Button";
+import Button from "../../../components/interactive/Button";
 import SideBarItem from "./SideBarItem";
 import { useEffect } from "react";
 import { useLayoutStore } from "@/stores/layoutStore";
@@ -65,7 +65,7 @@ export default function LayoutSideBar({
                 (className ?? "")
             }
         >
-            <div className="h-full w-full bg-white rounded-lg pt-3  dark:bg-neutral-900 shadow-lg duration-300">
+            <div className="h-full w-full bg-white rounded-lg pt-3  dark:bg-neutral-900 shadow-md duration-300">
                 <div
                     className={`${
                         !sideBarOpened && "hidden"

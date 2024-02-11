@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/interactive/Button";
 import { numberWithCommas } from "@/util/number";
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";

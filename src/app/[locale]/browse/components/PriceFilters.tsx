@@ -1,7 +1,7 @@
 "use client";
 
-import IconInput from "@/components/IconInput";
-import Toggle from "@/components/Toggle";
+import InputWithIcon from "@/components/interactive/InputWithIcon";
+import Toggle from "@/components/interactive/Toggle";
 import { useBrowseStore } from "@/stores/browseStore";
 import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
 
@@ -10,21 +10,24 @@ interface Props {
         price_filters: string;
         to: string;
     };
+    className?: string;
 }
 
-export default function PriceFilters({ strings }: Props) {
+export default function PriceFilters({ strings, className }: Props) {
     const usePriceFilters = useBrowseStore((state) => state.usePriceFilters);
-    const setUsePriceFilters = useBrowseStore((state) => state.setUsePriceFilters);
+    const setUsePriceFilters = useBrowseStore(
+        (state) => state.setUsePriceFilters
+    );
 
     return (
-        <>
+        <div className={className}>
             <Toggle
                 label={strings.price_filters}
                 value={usePriceFilters}
                 onChange={(value) => setUsePriceFilters(value)}
             />
             <div className="flex gap-3 mt-1 items-center">
-                <IconInput
+                <InputWithIcon
                     className="flex-grow"
                     disabled={!usePriceFilters}
                     type="number"
@@ -34,7 +37,7 @@ export default function PriceFilters({ strings }: Props) {
                     }
                 />
                 <span className="opacity-50">{strings.to}</span>
-                <IconInput
+                <InputWithIcon
                     className="flex-grow"
                     disabled={!usePriceFilters}
                     type="number"
@@ -44,6 +47,6 @@ export default function PriceFilters({ strings }: Props) {
                     }
                 />
             </div>
-        </>
+        </div>
     );
 }

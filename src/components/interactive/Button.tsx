@@ -46,7 +46,7 @@ export default function Button({
         <button
             {...props}
             className={`
-                w-full h-10 rounded-lg text-white drop-shadow-lg duration-300 disabled:cursor-not-allowed disabled:opacity-50 items-center justify-center flex ${colorClass} ${className}
+                w-full h-10 rounded-lg text-white drop-shadow-md duration-300 disabled:cursor-not-allowed disabled:opacity-50 items-center justify-center flex ${colorClass} ${className}
             `}
             disabled={props.disabled || loading}
             onClick={onClick}

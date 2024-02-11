@@ -16,7 +16,7 @@ export default function Toggle({ label, className, onChange, value }: Props) {
         >
             <span
                 className={`w-3.5 h-3.5 rounded-full block duration-300 drop-shadow cursor-pointer ${
-                    value ? "bg-indigo-400" : "bg-neutral-400"
+                    value ? "bg-indigo-400 dark:bg-indigo-600" : "bg-neutral-400 dark:bg-neutral-600"
                 }`}
                 onClick={() => onChange?.(!value)}
             />

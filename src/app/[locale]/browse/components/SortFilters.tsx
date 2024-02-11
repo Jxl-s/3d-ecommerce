@@ -1,32 +1,44 @@
 "use client";
 
-import ListBox from "@/components/ListBox";
-import { SortBy, useBrowseStore } from "@/stores/browseStore";
+import ListBox from "@/components/interactive/ListBox";
+import { SortBy, SortOrder, useBrowseStore } from "@/stores/browseStore";
 
-const people = [
-    { name: "Wade Cooper" },
-    { name: "Arlene Mccoy" },
-    { name: "Devon Webb" },
-    { name: "Tom Cook" },
-    { name: "Tanya Fox" },
-    { name: "Hellen Schmidt" },
-];
+interface Props {
+    className?: string;
+}
 
-export default function SortFilters() {
+export default function SortFilters({ className }: Props) {
     const sortBy = useBrowseStore((state) => state.sortBy);
     const setSortBy = useBrowseStore((state) => state.setSortBy);
 
-    const list = [
+    const sortOrder = useBrowseStore((state) => state.sortOrder);
+    const setSortOrder = useBrowseStore((state) => state.setSortOrder);
+
+    const sortByList = [
         { display: "Name", value: SortBy.Name },
         { display: "Price", value: SortBy.Price },
         { display: "Rating", value: SortBy.Rating },
     ];
 
+    const sortOrderList = [
+        { display: "Ascending", value: SortOrder.Asc },
+        { display: "Descending", value: SortOrder.Desc },
+    ];
+
     return (
-        <ListBox
-            list={list}
-            onChange={({ value }) => setSortBy(value)}
-            selected={list.find((obj) => obj.value === sortBy)!}
-        />
+        <div className={`grid grid-cols-2 gap-2 mt-2 ${className}`}>
+            <ListBox
+                label="Sort By"
+                list={sortByList}
+                onChange={({ value }) => setSortBy(value)}
+                selected={sortByList.find((obj) => obj.value === sortBy)!}
+            />
+            <ListBox
+                label="Sort Order"
+                list={sortOrderList}
+                onChange={({ value }) => setSortOrder(value)}
+                selected={sortOrderList.find((obj) => obj.value === sortOrder)!}
+            />
+        </div>
     );
 }

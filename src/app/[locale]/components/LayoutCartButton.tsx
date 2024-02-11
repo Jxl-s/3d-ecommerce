@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/Button";
+import Button from "@/components/interactive/Button";
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 

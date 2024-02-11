@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@/components/interactive/Button";
 
 export default function Login() {
     return (
@@ -12,7 +12,7 @@ export default function Login() {
                 </h2>
             </div>
             <div className={`gap-2 flex flex-col mt-4 md:max-w-[32em]`}>
-                <Button theme="google" className="font-semibold drop-shadow-lg">
+                <Button theme="google" className="font-semibold drop-shadow-md">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         x="0px"

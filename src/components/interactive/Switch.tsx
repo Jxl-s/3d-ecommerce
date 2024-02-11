@@ -20,7 +20,7 @@ export default function Switch({ enabled, onChange }: Props) {
             <span
                 className={`${
                     enabled ? "translate-x-6" : "translate-x-1"
-                } inline-block h-4 w-4 transform rounded-full bg-white transition drop-shadow-lg shadow`}
+                } inline-block h-4 w-4 transform rounded-full bg-white transition drop-shadow-md`}
             />
         </_Switch_>
     );
