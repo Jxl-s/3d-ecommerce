@@ -20,7 +20,7 @@ export default function LayoutBurgerButton() {
             </div>
 
             <div
-                className={`fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-10 ${
+                className={`fixed top-0 left-0 w-screen h-screen backdrop-blur-lg z-20 ${
                     !sideBarOpened && "hidden"
                 }`}
                 onClick={onDismiss}

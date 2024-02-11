@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 
 import LayoutSideBar from "./components/LayoutSideBar";
 import LayoutHeader from "./components/LayoutHeader";
-import { HeroSvg } from "@/svgs";
 import {
     HomeIcon,
     MagnifyingGlassCircleIcon,
