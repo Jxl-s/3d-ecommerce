@@ -39,5 +39,22 @@
     },
     "Common": {
         "by": "by"
+    },
+    "Browse": {
+        "Browse": "Browse",
+        "search_placeholder": "Expensive watch for a wedding",
+        "Price Filters": "Price Filters",
+        "To": "To",
+        "Sort By": "Sort By",
+        "Sort Order": "Sort Order",
+        "Star Filters": "Star Filters",
+        "Sort": {
+            "Name": "Name",
+            "Price": "Price",
+            "Rating": "Rating",
+
+            "Ascending": "Ascending",
+            "Descending": "Descending"
+        }
     }
 }

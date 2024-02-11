@@ -6,9 +6,12 @@ import { useBrowseStore } from "@/stores/browseStore";
 
 interface Props {
     className?: string;
+    strings: {
+        star_filters: string;
+    };
 }
 
-export default function StarFilters({ className }: Props) {
+export default function StarFilters({ className, strings }: Props) {
     const useStarFilters = useBrowseStore((state) => state.useStarFilters);
     const setUseStarFilters = useBrowseStore(
         (state) => state.setUseStarFilters
@@ -20,7 +23,7 @@ export default function StarFilters({ className }: Props) {
     return (
         <div className={className}>
             <Toggle
-                label="Star filters"
+                label={strings.star_filters}
                 value={useStarFilters}
                 onChange={setUseStarFilters}
             />

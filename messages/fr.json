@@ -39,5 +39,22 @@
     },
     "Common": {
         "by": "de "
+    },
+    "Browse": {
+        "Browse": "Chercher",
+        "search_placeholder": "Montre cher pour un marriage",
+        "Price Filters": "Filtres de prix",
+        "To": "À",
+        "Sort By": "Ordonner par",
+        "Sort Order": "Ordre de tri",
+        "Star Filters": "Filtres d'étoiles",
+        "Sort": {
+            "Name": "Nom",
+            "Price": "Prix",
+            "Rating": "Évaluation",
+
+            "Ascending": "Croissant",
+            "Descending": "Décroissant"
+        }
     }
 }
