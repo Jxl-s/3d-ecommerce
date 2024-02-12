@@ -1,18 +1,9 @@
-import InputWithIcon from "@/components/interactive/InputWithIcon";
-import Toggle from "@/components/interactive/Toggle";
-import {
-    CurrencyDollarIcon,
-    MagnifyingGlassCircleIcon,
-} from "@heroicons/react/24/outline";
-import { CircleStackIcon, PlayCircleIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
 import PriceFilters from "./components/PriceFilters";
 import SortFilters from "./components/SortFilters";
 import StarFilters from "./components/StarFilters";
 import { useTranslations } from "next-intl";
 import { SortBy, SortOrder } from "@/stores/browseStore";
 import SearchInput from "./components/SearchInput";
-import MultiNumberSelect from "@/components/interactive/MultiNumberSelect";
 import PageSelector from "./components/PageSelector";
 import Product from "@/components/Product";
 

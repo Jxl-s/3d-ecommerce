@@ -1,6 +1,7 @@
 "use client";
 
 import InputWithIcon from "@/components/interactive/InputWithIcon";
+import { useBrowseStore } from "@/stores/browseStore";
 import { MagnifyingGlassCircleIcon } from "@heroicons/react/24/outline";
 
 interface Props {
@@ -11,6 +12,9 @@ interface Props {
 }
 
 export default function SearchInput({ strings }: Props) {
+    const searchQuery = useBrowseStore((state) => state.searchQuery);
+    const setSearchQuery = useBrowseStore((state) => state.setSearchQuery);
+
     return (
         <InputWithIcon
             icon={
@@ -18,6 +22,8 @@ export default function SearchInput({ strings }: Props) {
             }
             label={strings.browse}
             type="text"
+            value={searchQuery}
+            onChange={setSearchQuery}
             placeholder={strings.search_placeholder}
         />
     );

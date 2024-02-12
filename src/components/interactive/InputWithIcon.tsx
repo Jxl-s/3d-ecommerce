@@ -1,20 +1,25 @@
 "use client";
 
-interface Props {
+type InputTypeValue = {
+    text: string;
+    number: number;
+}
+
+interface Props<T extends keyof InputTypeValue> {
     icon: React.ReactNode;
-    type: string;
+    type: T;
     placeholder: string;
-    value?: any;
+    value?: InputTypeValue[T];
     label?: string;
     className?: string;
     disabled?: boolean;
-    onChange?: (text: any) => void;
+    onChange?: (text: InputTypeValue[T]) => void;
 
     inputAttr?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 // todo: clean up so many props
-export default function InputWithIcon({
+export default function InputWithIcon<T extends keyof InputTypeValue>({
     icon,
     type,
     value,
@@ -25,7 +30,7 @@ export default function InputWithIcon({
     onChange,
 
     inputAttr
-}: Props) {
+}: Props<T>) {
     return (
         <div className={className}>
             {label && <span className="opacity-50 text-sm block">{label}</span>}
@@ -43,7 +48,7 @@ export default function InputWithIcon({
                     disabled={disabled}
                     placeholder={placeholder}
                     value={value}
-                    onChange={(e) => onChange?.(e.target.value)}
+                    onChange={(e) => onChange?.(e.target.value as InputTypeValue[T])}
                     className="text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit"
                 />
             </div>
