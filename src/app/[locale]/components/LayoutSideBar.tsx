@@ -6,6 +6,7 @@ import SideBarItem from "./SideBarItem";
 import { useEffect } from "react";
 import { useLayoutStore } from "@/stores/layoutStore";
 import SideBarOptions from "./SideBarOptions";
+import { usePathname } from "next/navigation";
 
 interface SideBarProps extends React.HTMLAttributes<HTMLDivElement> {
     objects: {
@@ -32,6 +33,8 @@ export default function LayoutSideBar({
     values,
     strings,
 }: SideBarProps) {
+    const pathname = usePathname();
+
     const sideBarOpened = useLayoutStore((s) => s.sideBarOpened);
     const setSideBarOpened = useLayoutStore((s) => s.setSideBarOpened);
 
@@ -92,7 +95,8 @@ export default function LayoutSideBar({
                                 return (
                                     <SideBarItem
                                         key={i}
-                                        active={o.active ?? false}
+                                        // active={o.active ?? false}
+                                        active={pathname === o.href}
                                         icon={o.icon}
                                         text={o.text}
                                         href={o.href}
@@ -103,7 +107,10 @@ export default function LayoutSideBar({
                     </div>
 
                     <SideBarOptions
-                        values={{ dark: values.dark, language: values.language }}
+                        values={{
+                            dark: values.dark,
+                            language: values.language,
+                        }}
                         strings={{
                             theme: strings.theme,
                             language: strings.language,

@@ -71,7 +71,7 @@ export default function RootLayout({
                 <LayoutSideBar
                     values={{
                         dark: appendTheme === "dark",
-                        language: locale
+                        language: locale,
                     }}
                     strings={{
                         theme: t("Theme"),
@@ -88,19 +88,20 @@ export default function RootLayout({
                             text: t("Home"),
                             type: "link",
                             active: true,
-                            href: "./home",
+                            href: `/${locale}/home`,
+                            // href: "./home",
                         },
                         {
                             icon: <MagnifyingGlassCircleIcon />,
                             text: t("Browse"),
                             type: "link",
-                            href: "./browse",
+                            href: `/${locale}/browse`,
                         },
                         {
                             icon: <ShoppingCartIcon />,
                             text: t("Cart"),
                             type: "link",
-                            href: "./cart",
+                            href: `/${locale}/cart`,
                         },
                         {
                             text: t("Creator"),
@@ -110,13 +111,13 @@ export default function RootLayout({
                             icon: <PlusCircleIcon />,
                             text: t("New Product"),
                             type: "link",
-                            href: "./creator/new-product",
+                            href: `/${locale}/creator/new-product`,
                         },
                         {
                             icon: <ChartBarIcon />,
                             text: t("Statistics"),
                             type: "link",
-                            href: "./creator/statistics",
+                            href: `/${locale}/creator/statistics`,
                         },
                         {
                             text: t("Help and Support"),
@@ -126,19 +127,19 @@ export default function RootLayout({
                             icon: <BookOpenIcon />,
                             text: t("Contact"),
                             type: "link",
-                            href: "./help/contact",
+                            href: `/${locale}/help/contact`,
                         },
                         {
                             icon: <PhoneArrowUpRightIcon />,
                             text: t("Customer Service"),
                             type: "link",
-                            href: "./help/customer-service",
+                            href: `/${locale}/help/customer-service`,
                         },
                         {
                             icon: <QuestionMarkCircleIcon />,
                             text: t("FAQ"),
                             type: "link",
-                            href: "./help/faq",
+                            href: `/${locale}/help/faq`,
                         },
                         {
                             text: t("Account"),
@@ -148,7 +149,7 @@ export default function RootLayout({
                             icon: <AdjustmentsHorizontalIcon />,
                             text: t("Settings"),
                             type: "link",
-                            href: "./account/settings",
+                            href: `/${locale}/account/settings`,
                         },
                     ]}
                 />

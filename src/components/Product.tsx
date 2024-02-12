@@ -43,8 +43,8 @@ export default function Product({
             } ${className}`}
         >
             <div
-                className={`me-2 xl:me-0 flex items-start justify-center ${
-                    !homeProduct && "xl:border xl:border-black/10"
+                className={`me-2 flex items-start justify-center ${
+                    !homeProduct && "xl:border xl:border-black/10 xl:me-0"
                 } xl:rounded-lg`}
             >
                 <Image
