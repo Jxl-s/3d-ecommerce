@@ -56,5 +56,11 @@
             "Ascending": "Croissant",
             "Descending": "Décroissant"
         }
+    },
+    "Cart": {
+        "Shopping Cart": "Chariot d'achat",
+        "Subtotal": "Sous-total",
+        "Items": "Articles",
+        "Go to Checkout": "Aller à la caisse"
     }
 }

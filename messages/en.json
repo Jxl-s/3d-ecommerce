@@ -56,5 +56,11 @@
             "Ascending": "Ascending",
             "Descending": "Descending"
         }
+    },
+    "Cart": {
+        "Shopping Cart": "Shopping Cart",
+        "Subtotal": "Subtotal",
+        "Items": "Items",
+        "Go to Checkout": "Go to Checkout"
     }
 }
