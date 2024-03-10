@@ -25,7 +25,7 @@ export default function Checkout() {
             <div className="grid grid-cols-2 gap-6">
                 <section className="col-span-2 xl:col-span-1">
                     <h1 className="text-2xl font-semibold mt-4">
-                        {t("Review Items ")}
+                        {t("Review Items")}
                     </h1>
                     <div className="bg-white rounded-lg p-2 drop-shadow-md mt-2 dark:bg-neutral-900/70">
                         {Array.from({ length: 3 }).map((_, i) => (
