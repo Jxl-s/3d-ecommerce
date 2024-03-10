@@ -11,6 +11,7 @@ interface Props<T extends keyof InputTypeValue> {
     placeholder: string;
     value?: InputTypeValue[T];
     label?: string;
+    height?: number;
     className?: string;
     disabled?: boolean;
     onChange?: (text: InputTypeValue[T]) => void;
@@ -26,6 +27,7 @@ export default function InputWithIcon<T extends keyof InputTypeValue>({
     placeholder,
     label,
     className,
+    height,
     disabled,
     onChange,
 
@@ -35,7 +37,7 @@ export default function InputWithIcon<T extends keyof InputTypeValue>({
         <div className={className}>
             {label && <span className="opacity-50 text-sm block">{label}</span>}
             <div
-                className={`duration-300 w-full h-10 drop-shadow-md bg-white dark:bg-neutral-900 rounded-lg flex items-center justify-start px-2 ${
+                className={`duration-300 w-full h-${height ?? 10} drop-shadow-md bg-white dark:bg-neutral-900 rounded-lg flex items-center justify-start px-2 ${
                     label && "mt-1"
                 } ${disabled && "opacity-25"}`}
             >
@@ -49,7 +51,7 @@ export default function InputWithIcon<T extends keyof InputTypeValue>({
                     placeholder={placeholder}
                     value={value}
                     onChange={(e) => onChange?.(e.target.value as InputTypeValue[T])}
-                    className="text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit"
+                    className={`text-sm outline-none w-full disabled:cursor-not-allowed bg-inherit ${inputAttr?.className}`}
                 />
             </div>
         </div>
