@@ -3,6 +3,7 @@ import Product from "@/components/Product";
 import Button from "@/components/interactive/Button";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { Fragment } from "react";
 
 export default function Cart() {
@@ -48,9 +49,11 @@ export default function Cart() {
                             $56.97
                         </span>
                     </span>
-                    <Button theme="primary" className="font-semibold mt-2">
-                        {t("Go to Checkout")}
-                    </Button>
+                    <Link href="./cart/checkout">
+                        <Button theme="primary" className="font-semibold mt-2">
+                            {t("Go to Checkout")}
+                        </Button>
+                    </Link>
                 </div>
             </section>
         </div>
