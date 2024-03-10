@@ -61,6 +61,19 @@
         "Shopping Cart": "Shopping Cart",
         "Subtotal": "Subtotal",
         "Items": "Items",
-        "Go to Checkout": "Go to Checkout"
+        "Go to Checkout": "Go to Checkout",
+
+        "Shipping Address": "Shipping Address",
+        "Payment Methods": "Payment Methods",
+        "Review Items": "Review Items",
+        "Order Summary": "Order Summary",
+        "Shipping": "Shipping",
+        "Total Before Tax" : "Total Before Tax",
+        "Estimated Tax": "Estimated Tax",
+        "Order Total": "Order Total",
+        "Place Order": "Place Order",
+
+        "address_hint": "This is a fake checkout, please don&apos;t give your address",
+        "payment_hint": "This is a fake checkout, please don&apos;t provide your card information"
     }
 }

@@ -61,6 +61,19 @@
         "Shopping Cart": "Chariot d'achat",
         "Subtotal": "Sous-total",
         "Items": "Articles",
-        "Go to Checkout": "Aller à la caisse"
+        "Go to Checkout": "Aller à la caisse",
+
+        "Shipping Address": "Adresse de livraison",
+        "Payment Methods": "Méthodes de paiement",
+        "Review Items": "Vérifier les articles",
+        "Order Summary": "Résumé de la commande",
+        "Shipping": "Expédition",
+        "Total Before Tax" : "Total avant taxes",
+        "Estimated Tax": "Taxes estimées",
+        "Order Total": "Total de la commande",
+        "Place Order": "Passer la commande",
+
+        "address_hint": "Ceci est un faux site de commerce électronique, veuillez ne pas fournir votre adresse personnelle",
+        "payment_hint": "Ceci est un faux site de commerce électronique, veuillez ne pas fournir vos informations de carte de crédit"
     }
 }

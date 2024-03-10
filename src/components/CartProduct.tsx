@@ -18,6 +18,7 @@ interface Props {
     ratingCount: number;
 
     className?: string;
+    page?: "cart" | "checkout";
 }
 
 export default function CartProduct({
@@ -28,6 +29,7 @@ export default function CartProduct({
     ratingCount,
     price,
     className,
+    page = "cart",
 }: Props) {
     const t = useTranslations();
 
@@ -66,33 +68,46 @@ export default function CartProduct({
                     ratingCount={ratingCount}
                     className="mt-1"
                 />
-                <div className="flex items-center justify-between flex-grow my-2 gap-4 h-8">
-                    <div className="flex items-center justify-start gap-2 h-full w-full">
-                        <span className="text-xs text-neutral-400">Qty:</span>
-                        <InputWithIcon
-                            icon={null}
-                            placeholder="1"
-                            value={2}
-                            type="number"
-                            height={8}
-                            className="border border-black/10 rounded-lg dark:border-white/10"
-                            inputAttr={{
-                                className: "text-xs text-center",
-                                min: 1,
-                            }}
-                        />
-                        <Button
-                            theme="danger"
-                            className="font-semibold h-full text-xs max-w-32"
-                        >
-                            Delete
-                        </Button>
-                    </div>
+                {page === "cart" ? (
+                    <div className="flex items-center justify-between flex-grow my-2 gap-4 h-8">
+                        <div className="flex items-center justify-start gap-2 h-full w-full">
+                            <span className="text-xs text-neutral-400">
+                                Qty:
+                            </span>
+                            <InputWithIcon
+                                icon={null}
+                                placeholder="1"
+                                value={2}
+                                type="number"
+                                height={8}
+                                className="border border-black/10 rounded-lg dark:border-white/10"
+                                inputAttr={{
+                                    className: "text-xs text-center",
+                                    min: 1,
+                                }}
+                            />
+                            <Button
+                                theme="danger"
+                                className="font-semibold h-full text-xs max-w-32"
+                            >
+                                Delete
+                            </Button>
+                        </div>
 
-                    <span className="font-bold dark:font-semibold text-lg">
-                        ${price}
-                    </span>
-                </div>
+                        <span className="font-bold dark:font-semibold text-lg">
+                            ${price}
+                        </span>
+                    </div>
+                ) : (
+                    <div className="flex items-center justify-between mt-1">
+                        <span className="text-sm font-bold opacity-75">
+                            x 2
+                        </span>
+                        <span className="font-bold dark:font-semibold text-lg">
+                            ${price}
+                        </span>
+                    </div>
+                )}
             </div>
         </div>
     );
