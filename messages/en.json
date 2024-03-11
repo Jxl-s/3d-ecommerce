@@ -73,7 +73,7 @@
         "Order Total": "Order Total",
         "Place Order": "Place Order",
 
-        "address_hint": "This is a fake checkout, please don&apos;t give your address",
-        "payment_hint": "This is a fake checkout, please don&apos;t provide your card information"
+        "address_hint": "This is a fake checkout, please don't give your address",
+        "payment_hint": "This is a fake checkout, please don't provide your card information"
     }
 }
